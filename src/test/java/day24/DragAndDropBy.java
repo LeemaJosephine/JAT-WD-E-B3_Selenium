@@ -1,4 +1,4 @@
-package day23;
+package day24;
 
 import java.time.Duration;
 
@@ -8,14 +8,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
-public class DragAndDrop {
+public class DragAndDropBy {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 		WebDriver driver = new ChromeDriver();
 		
-		driver.get("https://jqueryui.com/droppable/");
+		driver.get("https://jqueryui.com/draggable/");
 		
 		driver.manage().window().maximize();
 		
@@ -23,16 +23,10 @@ public class DragAndDrop {
 		
 		driver.switchTo().frame(0);
 		
-		// source element - drag 
-		WebElement source = driver.findElement(By.id("draggable"));
-		
-		//target element - drop 
-		WebElement target = driver.findElement(By.id("droppable"));
-		
-		// Actions class object
+		WebElement drag = driver.findElement(By.id("draggable"));
 		
 		Actions mouse = new Actions(driver);
-		mouse.dragAndDrop(source, target).perform();
+		mouse.dragAndDropBy(drag, 150, 150).perform();
 	}
 
 }

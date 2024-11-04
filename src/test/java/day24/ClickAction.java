@@ -1,4 +1,4 @@
-package day23;
+package day24;
 
 import java.time.Duration;
 
